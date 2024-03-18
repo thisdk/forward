@@ -1,10 +1,6 @@
 #!/bin/sh
 
-sleep 2
-
 cp -f /etc/supervisor/conf.d/supervisord.conf.backup /etc/supervisor/conf.d/supervisord.conf
-
-WIREGUARD_IP=$(dig +short wireguard)
 
 if [ $UDP_FEC ];then
     sed -i "s#UDP_FEC#$UDP_FEC#g" /etc/supervisor/conf.d/supervisord.conf
